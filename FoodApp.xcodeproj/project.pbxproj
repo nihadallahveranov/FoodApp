@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B140B23295225B200B07F7A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B140B22295225B200B07F7A /* DetailViewModel.swift */; };
+		3B140B252952270700B07F7A /* FoodCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B140B242952270700B07F7A /* FoodCart.swift */; };
+		3B140B272952279500B07F7A /* CRUDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B140B262952279500B07F7A /* CRUDResponse.swift */; };
+		3B140B2929522F3B00B07F7A /* FoodCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B140B2829522F3B00B07F7A /* FoodCartResponse.swift */; };
+		3B140B2D295233F200B07F7A /* CartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B140B2C295233F200B07F7A /* CartScreen.swift */; };
+		3B140B3029524AE500B07F7A /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B140B2F29524AE500B07F7A /* CartViewModel.swift */; };
 		3B339DD429478E9000754842 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B339DD329478E9000754842 /* AppDelegate.swift */; };
 		3B339DD629478E9000754842 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B339DD529478E9000754842 /* SceneDelegate.swift */; };
 		3B339DD829478E9000754842 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B339DD729478E9000754842 /* HomeScreen.swift */; };
@@ -28,6 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B140B22295225B200B07F7A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		3B140B242952270700B07F7A /* FoodCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCart.swift; sourceTree = "<group>"; };
+		3B140B262952279500B07F7A /* CRUDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDResponse.swift; sourceTree = "<group>"; };
+		3B140B2829522F3B00B07F7A /* FoodCartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCartResponse.swift; sourceTree = "<group>"; };
+		3B140B2C295233F200B07F7A /* CartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreen.swift; sourceTree = "<group>"; };
+		3B140B2F29524AE500B07F7A /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		3B339DD029478E9000754842 /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B339DD329478E9000754842 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B339DD529478E9000754842 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +138,7 @@
 				3B339DD729478E9000754842 /* HomeScreen.swift */,
 				3BA3F7C5294B8E9E00E0931F /* FilterScreen.swift */,
 				3BC9AFB92950FF6700426389 /* DetailScreen.swift */,
+				3B140B2C295233F200B07F7A /* CartScreen.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -144,6 +157,9 @@
 				3BA3F7D2294BA75200E0931F /* Food.swift */,
 				3BA3F7D8294BA9FF00E0931F /* FoodResponse.swift */,
 				3B6D6249294CF6F600D4B881 /* Filter.swift */,
+				3B140B242952270700B07F7A /* FoodCart.swift */,
+				3B140B262952279500B07F7A /* CRUDResponse.swift */,
+				3B140B2829522F3B00B07F7A /* FoodCartResponse.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -152,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				3BA3F7D4294BA94D00E0931F /* HomeViewModel.swift */,
+				3B140B22295225B200B07F7A /* DetailViewModel.swift */,
+				3B140B2F29524AE500B07F7A /* CartViewModel.swift */,
 			);
 			path = "view-models";
 			sourceTree = "<group>";
@@ -255,13 +273,19 @@
 			files = (
 				3BA3F7D9294BA9FF00E0931F /* FoodResponse.swift in Sources */,
 				3B6D624A294CF6F600D4B881 /* Filter.swift in Sources */,
+				3B140B2929522F3B00B07F7A /* FoodCartResponse.swift in Sources */,
 				3BA3F7D1294B9EA300E0931F /* FoodViewCell.swift in Sources */,
 				3B339DD829478E9000754842 /* HomeScreen.swift in Sources */,
 				3BA3F7D7294BA99A00E0931F /* FoodsDaoRepo.swift in Sources */,
+				3B140B3029524AE500B07F7A /* CartViewModel.swift in Sources */,
+				3B140B252952270700B07F7A /* FoodCart.swift in Sources */,
 				3BA3F7D5294BA94D00E0931F /* HomeViewModel.swift in Sources */,
+				3B140B2D295233F200B07F7A /* CartScreen.swift in Sources */,
 				3B339DD429478E9000754842 /* AppDelegate.swift in Sources */,
+				3B140B272952279500B07F7A /* CRUDResponse.swift in Sources */,
 				3B339DD629478E9000754842 /* SceneDelegate.swift in Sources */,
 				3BC9AFBA2950FF6700426389 /* DetailScreen.swift in Sources */,
+				3B140B23295225B200B07F7A /* DetailViewModel.swift in Sources */,
 				3BA3F7C6294B8E9E00E0931F /* FilterScreen.swift in Sources */,
 				3BA3F7D3294BA75200E0931F /* Food.swift in Sources */,
 				3B6D6246294CAFC200D4B881 /* CategoryCell.swift in Sources */,

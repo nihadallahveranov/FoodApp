@@ -11,18 +11,20 @@ import Kingfisher
 class DetailScreen: UIViewController {
 
     @IBOutlet weak var foodImg: UIImageView!
-    
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var foodCategory: UILabel!
     @IBOutlet weak var foodPrice: UILabel!
     @IBOutlet weak var foodQuantity: UILabel!
     
     var food: Food?
+    
+    var viewModel = DetailViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.tintColor = UIColor(named: "redColor")
         
         if let food = self.food, let url = URL(string: "http://kasimadalan.pe.hu/foods/images/\(food.image!)") {
@@ -58,6 +60,12 @@ class DetailScreen: UIViewController {
         foodQuantity.text = "\(quantity + 1)"
         if let food = self.food {
             foodPrice.text = "$\((quantity + 1) * food.price!)"
+        }
+    }
+    
+    @IBAction func addToCart(_ sender: Any) {
+        if let orderAmount = Int(foodQuantity.text!) {
+            viewModel.insertFood(food: self.food!, orderAmount: orderAmount, userName: "nihadallahveranov")
         }
     }
 }
