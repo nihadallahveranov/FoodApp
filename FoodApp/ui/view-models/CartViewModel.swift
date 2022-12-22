@@ -14,11 +14,15 @@ class CartViewModel {
     var frepo = FoodsDaoRepo()
     
     init() {
-        loadFoodsCart(username: "nihadallahveranov")
+        loadFoodsCart(userName: "nihadallahveranov")
         foodsCart = frepo.foodsCart
     }
     
-    func loadFoodsCart(username: String) {
-        frepo.loadFoodsCart(username: username)
+    func loadFoodsCart(userName: String) {
+        frepo.loadFoodsCart(userName: userName)
+    }
+    
+    func delete(cartId: Int, userName: String) {
+        frepo.delete(cartId: cartId, userName: userName)
     }
 }

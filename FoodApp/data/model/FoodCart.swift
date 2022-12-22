@@ -8,7 +8,7 @@
 import Foundation
 
 class FoodCart: Codable {
-    var id: Int?
+    var cartId: Int?
     var name: String?
     var image: String?
     var price: Int?
@@ -16,8 +16,8 @@ class FoodCart: Codable {
     var orderAmount: Int?
     var userName: String?
     
-    init(id: Int, name: String, image: String, price: Int, category: String, orderAmount: Int, userName: String) {
-        self.id = id
+    init(cartId: Int, name: String, image: String, price: Int, category: String, orderAmount: Int, userName: String) {
+        self.cartId = cartId
         self.name = name
         self.image = image
         self.price = price

@@ -49,10 +49,21 @@ class HomeScreen: UIViewController {
                 self.foodTableView.reloadData()
             }
         })
+        
+        _ = viewModel.foodsCart.subscribe(onNext: { list in
+            DispatchQueue.main.async {
+                if let tabsItem = self.tabBarController?.tabBar.items {
+                    let item = tabsItem[1]
+                    item.badgeValue = "\(list.count)"
+                }
+            }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
     
+        viewModel.loadFoodsCart(userName: "nihadallahveranov")
+        
         filters.removeAll()
         
         filters.append("All")
@@ -89,6 +100,7 @@ class HomeScreen: UIViewController {
                 maxPrice: filter.maxPrice!,
                 category: filter.category!)
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

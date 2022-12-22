@@ -98,9 +98,8 @@ class FoodsDaoRepo {
         }
     }
     
-    func loadFoodsCart(username: String) {
-        let params: Parameters = [
-            "userName": username]
+    func loadFoodsCart(userName: String) {
+        let params: Parameters = ["userName": userName]
         
         AF.request("http://kasimadalan.pe.hu/foods/getFoodsCart.php",
                    method: .post,
@@ -108,10 +107,29 @@ class FoodsDaoRepo {
             if let data = response.data {
                 do {
                     let result = try JSONDecoder().decode(FoodCartResponse.self, from: data)
-                    
                     if let list = result.foodsCart {
                         self.foodsCart.onNext(list)
                     }
+                } catch {
+                    print(error.localizedDescription)
+                    self.foodsCart.onNext([FoodCart]())
+                }
+            }
+        }
+    }
+    
+    func delete(cartId: Int, userName: String) {
+        let params: Parameters = ["cartId": cartId, "userName": userName]
+        
+        AF.request("http://kasimadalan.pe.hu/foods/deleteFood.php", method: .post, parameters: params).response { response in
+            if let data = response.data {
+                do {
+                    let result = try JSONDecoder().decode(CRUDResponse.self, from: data)
+                    
+                    print("success from post food: \(result.success!)")
+                    print("message from post food: \(result.message!)")
+                    
+                    self.loadFoodsCart(userName: userName)
                 } catch {
                     print(error.localizedDescription)
                 }

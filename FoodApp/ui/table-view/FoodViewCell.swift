@@ -14,6 +14,13 @@ class FoodViewCell: UITableViewCell {
     @IBOutlet weak var foodCategory: UILabel!
     @IBOutlet weak var foodPrice: UILabel!
     
+
+    @IBOutlet weak var foodCartImg: UIImageView!
+    @IBOutlet weak var foodCartName: UILabel!
+    @IBOutlet weak var foodCartCategory: UILabel!
+    @IBOutlet weak var foodCartPrice: UILabel!
+    @IBOutlet weak var foodCartQuantity: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,6 +36,8 @@ class FoodViewCell: UITableViewCell {
         super.layoutSubviews()
 
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16))
+        
+        contentView.layer.cornerRadius = 10
     }
 
 }

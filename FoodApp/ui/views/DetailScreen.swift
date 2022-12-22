@@ -17,6 +17,7 @@ class DetailScreen: UIViewController {
     @IBOutlet weak var foodQuantity: UILabel!
     
     var food: Food?
+    var foodsCart = [FoodCart]()
     
     var viewModel = DetailViewModel()
     
@@ -33,6 +34,10 @@ class DetailScreen: UIViewController {
             foodCategory.text = food.category!
             foodPrice.text = "$\(food.price!)"
         }
+        
+        _ = viewModel.foodsCart.subscribe(onNext: { list in
+            self.foodsCart = list
+        })
     }
     
     @IBAction func btnDecreaseQuantity(_ sender: Any) {
@@ -64,8 +69,23 @@ class DetailScreen: UIViewController {
     }
     
     @IBAction func addToCart(_ sender: Any) {
-        if let orderAmount = Int(foodQuantity.text!) {
-            viewModel.insertFood(food: self.food!, orderAmount: orderAmount, userName: "nihadallahveranov")
+        if let orderAmount = Int(foodQuantity.text!), let food = self.food {
+
+            var orderAmountInCart = 0
+            
+            for foodCart in foodsCart {
+                if foodCart.name == food.name {
+                    orderAmountInCart += foodCart.orderAmount!
+                    viewModel.delete(cartId: foodCart.cartId!, userName: "nihadallahveranov")
+                }
+            }
+            
+            viewModel.insertFood(food: food, orderAmount: orderAmount + orderAmountInCart, userName: "nihadallahveranov")
+            
+            let alert = UIAlertController(title: "\(food.name!)", message: "Added to your cart", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Okay", style: .destructive)
+            alert.addAction(okAction)
+            present(alert, animated: true)
         }
     }
 }
