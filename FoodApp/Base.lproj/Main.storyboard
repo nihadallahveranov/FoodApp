@@ -523,7 +523,7 @@
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="12"/>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="btnDecreaseQuantity:" destination="6pR-7H-4e8" eventType="touchUpInside" id="DHz-fO-bKg"/>
+                                                                <action selector="btnDecreaseQuantity:" destination="hpR-TF-vpY" eventType="touchUpInside" id="gO4-4d-rGp"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeL-ng-v0h">
@@ -544,7 +544,7 @@
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="12"/>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="btnIncreaseQuantity:" destination="6pR-7H-4e8" eventType="touchUpInside" id="NFL-VU-aGj"/>
+                                                                <action selector="btnIncreaseQuantity:" destination="hpR-TF-vpY" eventType="touchUpInside" id="836-1g-kwy"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>

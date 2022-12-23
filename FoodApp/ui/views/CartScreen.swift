@@ -68,9 +68,11 @@ class CartScreen: UIViewController {
         
         lblSubTotal.text = "$\(subTotal)"
     }
+    
 }
 
 extension CartScreen: UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tabBarItem.badgeValue = "\(foodsCart.count)"
         updateOrderPrices()
@@ -98,12 +100,6 @@ extension CartScreen: UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let foodCart = foodsCart[indexPath.row]
-//        let food = Food(id: 5, name: foodCart.name!, image: foodCart.image!, price: foodCart.price!, category: foodCart.category!)
-//        performSegue(withIdentifier: "toDetail", sender: food)
-//        foodCartTableView.deselectRow(at: indexPath, animated: true)
-//    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
@@ -132,4 +128,5 @@ extension CartScreen: UITableViewDelegate,UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
+
 
